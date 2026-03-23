@@ -1,0 +1,28 @@
+[package]
+name = "nexcore-compound-registry"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+license = "LicenseRef-Proprietary"
+authors = ["NexVigilant Team <team@nexvigilant.com>"]
+description = "Compound resolution via PubChem/ChEMBL with local SQLite cache"
+
+[dependencies]
+nexcore-error = { workspace = true }
+serde = { version = "1.0.204", features = ["derive"] }
+serde_json = { version = "1.0.120" }
+reqwest = { version = "0.12.5", features = ["json"] }
+tokio = { version = "1.38.0", features = ["full"] }
+nexcore-chrono = { workspace = true }
+rusqlite = { version = "0.32", features = ["bundled", "serde_json"] }
+tracing = { version = "0.1.40" }
+
+[dev-dependencies]
+tokio = { version = "1.38.0", features = ["full", "test-util"] }
+
+[features]
+integration = []
+
+
+[lints]
+workspace = true
